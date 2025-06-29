@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"	 href="style.css"/>
+    <title>Info Kai - Médallium</title>
+    <link rel="shortcut icon" href=".\assets\501.png">
+</head>
+
+<body>
+    <div class="Top_info">
+        <p class="text">Médallium</p>
+        <button type="button" id="return" onclick="window.location.href='Map.html'"></button>
+        <div class="yokai_name"></div>
+        <div class="yokai_num"></div>
+        <div class="yokai_rank" id="E"></div>
+        <div class="yokai_tribe"></div>
+    </div>
+
+    <div class="Médallium">
+        <div class="Page_gauche">
+            <button type="button" id="button_l" onclick="switch_page_index('button_l')"></button> 
+            <div class="index_l"></div>
+            <div class="medal_slot"></img></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+        </div>
+        
+        <div class="Page_droite">
+            <button type="button" id="button_r" onclick="switch_page_index('button_r')"></button>
+            <div class="index_r"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+            <div class="medal_slot"></div>
+        </div>
+        
+    </div>
+
+    <div class="Bottom_white">
+        <button type="button" id="yw1_button" onclick="switch_game('yw1')">Yo-kai Watch 1</button>
+        <button type="button" id="yw2_button" onclick="switch_game('yw2')">Yo-kai Watch 2</button>
+        <button type="button" id="yw3_button" onclick="switch_game('yw3')">Yo-kai Watch 3</button>
+        <input type="search" id="bottom_search" placeholder="Rechercher un nom"></input>
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+</html> 

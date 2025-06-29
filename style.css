@@ -1,0 +1,338 @@
+@font-face {
+    font-family: IMGW;
+    src: url('assets\\font_sounds\\IwataMaruGothicW55-D.woff2');
+}
+
+@font-face {
+    font-family: TITLE;
+    src: url('assets\\font_sounds\\FOT-RowdyStd-EB.otf');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('assets\\orbs.png'), url('assets\\background.png');
+    background-size: 15vw 15vw, cover; 
+    background-repeat: repeat, no-repeat; 
+    background-position: 0 0 , center; 
+    background-attachment: local, fixed;
+    animation: moveOrbs 10s linear infinite;
+}
+
+@keyframes moveOrbs {
+    from {
+        background-position: 0 0, center;
+    }
+    to {
+        background-position: 15vw 15vw, center;
+    }
+}
+
+#return {
+    width: 2.5vw;
+    height: 2.55vw;
+    position: relative;
+    top: 65%;
+    transform: translateY(-65%);
+    left: 1.25%;
+}
+
+.Top_info {
+    position: relative;
+    background-image: url('assets\\top band fr.png');
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: calc(100vw*135/1971);
+}
+
+.text {
+    margin: 0px;
+    position: absolute;
+    top: calc(35/1080*100vw*9/16);    
+    left: calc(103/1920*100vw);
+    color: rgb(32,32,32);
+    font-size: 2.26vw;
+    font-family: TITLE;
+}
+
+.yokai_name {
+    font-family: IMGW;
+    color: #323232;
+    font-size: 2.28vw;
+    position: absolute;
+    top: 47.5%;
+    left: 52.5%;
+}
+
+.yokai_num {
+    position: absolute;
+    width: 5.85vw;
+    height:1.95vw;
+    top:54%;
+    left: 75.80%;
+    background-repeat: no-repeat;
+    background-position: left center, center, right center;
+    background-size: contain;
+}
+
+.yokai_rank {
+    position: absolute;
+    width: 2.5vw;
+    height: 2.5vw;
+    top:51.5%;
+    left: 70.9%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.yokai_tribe {
+    position: absolute;
+    width: 4.2vw;
+    height: 4.2vw;
+    top:30%;
+    left: 48%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.Médallium {
+    width: 100vw;
+    height: calc(100vh - 100vw*135/1971);
+    position: relative;
+    display:flex;
+    flex-direction: row;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;
+}
+
+.Page_gauche, .Page_droite {
+    position: relative;
+    background-image: url('assets\\page g.png');
+    background-size: auto calc(100vh - 100vw*135/1971);
+    background-repeat: no-repeat;
+    background-position: right top;
+    width: calc((100vh - 100vw*135/1971)*698/806);
+    height: calc(100vh - 100vw*135/1971);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    padding: 5vh 6vh;
+    box-sizing: border-box; /* de la magie qui fait que la padding ne grandit pas la page */
+}
+
+.Page_droite {
+    background-image: url('assets\\page d.png');
+}
+
+.medal_slot {
+    background-image: url('assets\\med slot.png');
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+}
+
+.medal_slot .medal {
+    width: 78%;
+    height: 78%;
+    z-index: 4;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.medal_slot:focus .medal, .medal_slot:hover .medal {
+    transform: scale(1.1) rotate(-10deg); 
+
+}
+
+.medal_slot:hover #ray0, .medal_slot:hover #ray1, .medal_slot:hover #ray2 {
+    display: block !important; /* encore de la magie qui fait que le display none du js prend pas le dessus */
+    position: absolute;
+    width: auto;
+    height: 110%;
+    opacity: 0.75;
+    z-index: 0;
+}
+
+.medal_slot:hover #ray1 {
+    animation: spin 10s linear infinite;
+    z-index: 1;
+}
+
+.medal_slot:hover #ray2 {
+    animation: spin-reverse 10s linear infinite;
+    height: 120%;
+    z-index: 2;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+#button_r, #button_l{
+    position: absolute;
+    right:0;
+    top:50%;
+    border: 0;
+    padding: 0;
+    width: calc(24%/3);
+    height: 22%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    background-image: url("assets\\flèche.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(1px 1px 5px #0095d7);
+}
+
+#button_l{
+    left: 0;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+#button_l:active{
+    transform: translateY(-50%) scaleX(-1) rotateY(45deg);
+}
+
+#button_r:active{
+    transform: translateY(-50%) rotateY(45deg);
+}
+
+.index_l, .index_r {
+    position: absolute;
+    bottom: 4%;
+    right: 3.5%;
+    background: url('assets\\misc\\0.png'), url('assets\\misc\\0.png');
+    background-position: left center, right center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 9.66%;
+    height: 4%;
+}
+
+.index_l {
+    left: 3.5%;
+}
+
+
+.Bottom_white {
+    z-index: 1;
+    margin-top: 15px;
+    background-color: #ffffff;
+    background-image: url('assets\\band.png');
+    background-size: 100vw;
+    width: 100vw;
+    height: 5.625vw;
+    animation: moveBand 140s linear infinite;
+    box-shadow: 0px -25px 20px #ffffff, inset 0px 25px 25px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Bottom_white > * {
+    margin: 0 10px 0 10px;
+}
+
+@keyframes moveBand {
+    from {
+        background-position: center 100vw;
+    }
+    to {
+        background-position: center 0;
+    }
+}
+
+@keyframes moveBand2 {
+    from {
+        background-position: center 10vh;
+    }
+    to {
+        background-position: center 0;
+    }
+}
+
+@media (max-aspect-ratio: 1){ /*donc l'écran est plus long que large */
+    .Bottom_white {
+        height: 10vh;
+        background-size: auto 10vh;
+        animation: moveBand2 8s linear infinite;
+    }
+
+    .Top_info {
+        background-image: url('assets\\top band fr2.png');
+        height: 0;
+        width: 100vw;
+        height: calc(100vw*135/900);
+    }
+
+    .Top_info > *:not(#return, .text) {
+        display: none;
+    }
+
+    .text{
+        top: calc(80/1080*100vw*9/16);    
+        left: calc(225/1920*100vw);
+        font-size: 4.9vw;
+    }
+    
+    #yokai_name {
+        display: none;
+    }
+
+    .Médallium {
+        width: 100vw;
+        height: calc(2*100vw*824/715);
+        flex-direction: column;
+    }
+
+    .Page_droite, .Page_gauche{
+        width: 100vw;
+        height: calc(100vw*824/715);
+        background-size: 100vw auto;
+        background-position: right top;
+    }
+
+}
+
+@media (max-width: calc(100vh*1430/824)) and (min-aspect-ratio: 1){ /*quand le médallium se fait compresser */
+    .Médallium {
+        width: 100vw;
+        height: calc(50vw*824/715);
+    }
+
+    .Page_droite, .Page_gauche{
+        width: 50vw;
+        height: calc(50vw*824/715);
+        background-size: 50vw auto;
+        background-position: center;
+    }
+}
