@@ -67,6 +67,10 @@ body {
     position: relative;
 }
 
+#ourcival {
+    display: none;
+}
+
 #boutiques {
     background-image: url('assets/map/granval-boutiques.png');
     width: calc(113/512*100%);
@@ -124,7 +128,7 @@ body {
 }
 
 #gare {
-    background-image: url('assets/map/granval-gare.png');
+    background-image: url('assets/map/ourcival-gare.png');
     width: calc(198/512*100%);
     height: calc(133/427*100%);
     left: calc(304/512*100%);
@@ -132,7 +136,7 @@ body {
 }
 
 #village {
-    background-image: url('assets/map/granval-village.png');
+    background-image: url('assets/map/ourcival-village.png');
     width: calc(213/512*100%);
     height: calc(164/427*100%);
     left: calc(84/512*100%);

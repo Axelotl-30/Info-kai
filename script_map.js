@@ -1,5 +1,30 @@
+let actual_region = 0;
+let region = ['granval','ourcival'];
 let actual_map = 'hauts';
 let zooming = 1;
+
+function switch_region(input) {
+    const container1 = document.querySelector(`#${region[actual_region]}`);
+
+    if (input === "l"){
+        actual_region = mod(actual_region - 1, 2);
+    }else if (input === "r"){
+        actual_region = mod(actual_region + 1, 2);
+    }
+
+    const map = document.querySelector(`.map`);
+    map.style.backgroundImage = `url('assets/map/${region[actual_region]}.png')`;
+
+    const container2 = document.querySelector(`#${region[actual_region]}`);
+
+    container1.style.display = "none";
+
+    container2.style.display = "block";
+}
+
+function mod(n, m) {
+  return ((n % m) + m) % m;
+}
 
 function switch_map(input) {
     const map1 = document.querySelector(`#${actual_map}`);

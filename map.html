@@ -12,15 +12,21 @@
 <body>
     <div class="Top_info"><p class="text">Carte</p></div>
     <div class="map">
-        <div class="highlight" id="boutiques" onclick="switch_map('boutiques')"></div>
-        <div class="highlight" id="coteaufleuri" onclick="switch_map('coteaufleuri')"></div>
-        <div class="highlight" id="hauts" onclick="switch_map('hauts')"></div>
-        <div class="highlight" id="centreville" onclick="switch_map('centreville')"></div>
-        <div class="highlight" id="lac" onclick="switch_map('lac')"></div>
-        <div class="highlight" id="montsylvestre" onclick="switch_map('montsylvestre')"></div>
-        <div class="highlight" id="tourexcellence" onclick="switch_map('tourexcellence')"></div>
-        <div class="highlight" id="gare" onclick="switch_map('gare')"></div>
-        <div class="highlight" id="village" onclick="switch_map('village')"></div>
+        <div class="container" id="granval">
+            <div class="highlight" id="boutiques" onclick="switch_map('boutiques')"></div>
+            <div class="highlight" id="coteaufleuri" onclick="switch_map('coteaufleuri')"></div>
+            <div class="highlight" id="hauts" onclick="switch_map('hauts')"></div>
+            <div class="highlight" id="centreville" onclick="switch_map('centreville')"></div>
+            <div class="highlight" id="lac" onclick="switch_map('lac')"></div>
+            <div class="highlight" id="montsylvestre" onclick="switch_map('montsylvestre')"></div>
+            <div class="highlight" id="tourexcellence" onclick="switch_map('tourexcellence')"></div>
+        </div>
+        <div class="container" id="ourcival">
+            <div class="highlight" id="gare" onclick="switch_map('gare')"></div>
+            <div class="highlight" id="village" onclick="switch_map('village')"></div>
+        </div>
+        <button type="button" id="l" onclick="switch_region('l')">l</button>
+        <button type="button" id="r" onclick="switch_region('r')">r</button>
     </div>
     <button type="button" id="plus" onclick="zoom('+')">+</button>
     <button type="button" id="moins" onclick="zoom('-')">-</button>
