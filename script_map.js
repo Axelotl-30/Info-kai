@@ -1,5 +1,5 @@
 let actual_region = 0;
-let region = ['granval','ourcival'];
+let region = ['Granval','Ourcival','San-Fantastico'];
 let actual_map = 'hauts';
 let zooming = 1;
 
@@ -7,9 +7,9 @@ function switch_region(input) {
     const container1 = document.querySelector(`#${region[actual_region]}`);
 
     if (input === "l"){
-        actual_region = mod(actual_region - 1, 2);
+        actual_region = mod(actual_region - 1, 3);
     }else if (input === "r"){
-        actual_region = mod(actual_region + 1, 2);
+        actual_region = mod(actual_region + 1, 3);
     }
 
     const map = document.querySelector(`.map`);
