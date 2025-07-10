@@ -1,5 +1,5 @@
 let actual_region = 0;
-let region = ['Granval','Ourcival','San-Fantastico'];
+const region = ['Granval','Ourcival','San-Fantastico'];
 let actual_map = 'hauts';
 let zooming = 1;
 
