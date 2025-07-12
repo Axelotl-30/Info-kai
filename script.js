@@ -10,11 +10,11 @@ let b_num;
 let yokai_pages;
 let b_pages;
 let leg_pages;
-let game = "yw2";
+let game = "yw1";
 const switch_sound = new Audio('assets\\font_sounds\\switch_yw1.wav');
 document.getElementById('bottom_search').addEventListener('keypress', function(event) {if (event.key === 'Enter') {search(this.value);}});
 
-switch_game("yw2");
+switch_game("yw1");
 
 function initialize(){
     yokai_ref = Object.keys(yokaiDict);
