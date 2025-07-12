@@ -1,0 +1,39 @@
+@font-face {
+    font-family: IMGW;
+    src: url('assets\\font_sounds\\IwataMaruGothicW55-D.woff2');
+}
+
+@font-face {
+    font-family: TITLE;
+    src: url('assets\\font_sounds\\FOT-RowdyStd-EB.otf');
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 75vw 25vw;
+    grid-template-rows: calc(100vw*135/1971) calc(25vw*427/512 - 100vw*135/1971) calc(100vh - 25vw*427/512);
+    grid-template-areas: "top minmap"
+                         "map minmap"
+                         "map .";
+    box-sizing: border-box; /* de la magie qui fait que la padding ne grandit pas la page */
+    background-image: url('assets\\orbs.png'), url('assets\\background.png');
+    background-size: 15vw 15vw, cover; 
+    background-repeat: repeat, no-repeat; 
+    background-position: 0 0 , center; 
+    background-attachment: local, fixed;
+    animation: moveOrbs 10s linear infinite;
+}
+
+@keyframes moveOrbs {
+    from {
+        background-position: 0 0, center;
+    }
+    to {
+        background-position: 15vw 15vw, center;
+    }
+}

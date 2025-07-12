@@ -100,6 +100,7 @@ function generate_medals(pindex,num,dict,ref,slots){
             img.src = `assets/medal/${dict[name][1]}.png`; 
             img.className = 'medal';
             img.id = name;
+            img.addEventListener('click', () => {redirectMedal(img.id);});
             
             ray0.src = 'assets\\light_ray0.png';
             ray0.id = 'ray0';
@@ -310,4 +311,8 @@ function findTopNClosestStrings(input, stringList, n = 5) {
     const topNClosestStrings = distances.slice(0, n).map(item => item.string);
 
     return topNClosestStrings;
+}
+
+function redirectMedal(yokai) {
+    window.open(`medal.html?yokai=${yokai}&game=${game}`, '_blank');
 }
