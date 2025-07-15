@@ -11,6 +11,7 @@ let yokai_pages;
 let b_pages;
 let leg_pages;
 let game = "yw1";
+const leg_start_index = {"yw1":1, "yw2":6,"ywb1":6,"yw3":1};
 const switch_sound = new Audio('assets\\font_sounds\\switch_yw1.wav');
 document.getElementById('bottom_search').addEventListener('keypress', function(event) {if (event.key === 'Enter') {search(this.value);}});
 
@@ -36,7 +37,7 @@ function initialize(){
 function num_to_pages(num){
     q = Math.floor(num / 24);
     r = num * 24;
-    if (r != 0){ //si on il reste des yokai qui ne complètent pas une page on ajoute toute la page
+    if (r != 0){ //si true il reste des yokai qui ne complètent pas une page on ajoute toute la page
         q += 1;
     }
     return q
@@ -62,8 +63,9 @@ function switch_page(){
             slot.innerHTML = '';
             slot.style.display = 'none';
         });
-        d.style.backgroundImage = `url("assets/medal/leg${page_index - b_pages + 1}d.png")`;
-        g.style.backgroundImage = `url("assets/medal/leg${page_index - b_pages + 1}g.png")`;
+        d.style.backgroundImage = `url("assets/medal/leg${page_index - b_pages + leg_start_index[game]}d.png")`;
+        g.style.backgroundImage = `url("assets/medal/leg${page_index - b_pages + leg_start_index[game]}g.png")`;
+        console.log("leg",page_index - b_pages + leg_start_index[game]);
         l.style.display = 'none';
         r.style.display = 'none';
         display_leg_info();
@@ -152,6 +154,7 @@ function switch_game(game_id) {
             yokaiDict = yokaiData;
             bDict = bData;
             legDict = legData;
+            game = game_id;
 
             initialize(); // Appel une fois que tout est prêt
         })
