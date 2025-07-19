@@ -41,6 +41,15 @@ body {
     top: 65%;
     transform: translateY(-65%);
     left: 1.25%;
+    background-image: url('assets\\misc\\return.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+}
+
+#return:hover {
+    cursor: pointer;
 }
 
 .Top_info {
@@ -155,7 +164,7 @@ body {
 
 .medal_slot:focus .medal, .medal_slot:hover .medal {
     transform: scale(1.1) rotate(-10deg); 
-
+    cursor: pointer;
 }
 
 .medal_slot:hover #ray0, .medal_slot:hover #ray1, .medal_slot:hover #ray2 {
@@ -224,6 +233,10 @@ body {
 
 #button_r:active{
     transform: translateY(-50%) rotateY(45deg);
+}
+
+#button_r:hover, #button_l:hover {
+    cursor: pointer;
 }
 
 .index_l, .index_r {

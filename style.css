@@ -34,8 +34,45 @@ body {
     }
 }
 
-button {
-    width: 2.5vw;
-    height: 2.55vw;
+.icon-grid > button {
+    width: 6vw;
+    height: 6vw;
+    margin: 0.5vw;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+}
+
+.icon-grid > button:hover {
+    cursor: pointer;
+}
+
+#medallium {
+    background-image: url('assets\\icons\\medallium.png');
+}
+
+#map {
+    background-image: url('assets\\icons\\cartes.png');
+}
+
+#quest {
+    background-image: url('assets\\icons\\quetes.png');
+}
+
+#subquest {
+    background-image: url('assets\\icons\\services.png');
+}
+
+#trophee {
+    background-image: url('assets\\icons\\trophees.png');
+}
+
+#password {
+    background-image: url('assets\\icons\\mdp.png');
+}
+
+#qrcode {
+    background-image: url('assets\\icons\\qrcodes.png');
 }

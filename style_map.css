@@ -45,6 +45,15 @@ body {
     top: 65%;
     transform: translateY(-65%);
     left: 1.25%;
+    background-image: url('assets\\misc\\return.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+}
+
+#return:hover {
+    cursor: pointer;
 }
 
 .Top_info {
@@ -195,6 +204,7 @@ body {
 
 .highlight:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 #map-container {
