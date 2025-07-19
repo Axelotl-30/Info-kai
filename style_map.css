@@ -38,6 +38,15 @@ body {
     }
 }
 
+#return {
+    width: 2.5vw;
+    height: 2.55vw;
+    position: relative;
+    top: 65%;
+    transform: translateY(-65%);
+    left: 1.25%;
+}
+
 .Top_info {
     grid-area: top;
     background-image: url('assets/top band fr2.png');
