@@ -15,8 +15,6 @@ const leg_start_index = {"yw1":1, "yw2":6,"ywb1":6,"yw3":1};
 const switch_sound = new Audio('assets\\font_sounds\\switch_yw1.wav');
 document.getElementById('bottom_search').addEventListener('keypress', function(event) {if (event.key === 'Enter') {search(this.value);}});
 
-switch_game("yw1");
-
 function initialize(){
     yokai_ref = Object.keys(yokaiDict);
     b_ref = Object.keys(bDict);
@@ -319,3 +317,18 @@ function findTopNClosestStrings(input, stringList, n = 5) {
 function redirectMedal(yokai) {
     window.open(`medal.html?yokai=${yokai}&game=${game}`, '_blank');
 }
+
+function loadPage(){
+    const params = new URLSearchParams(window.location.search);
+
+    const game = params.get("game");
+    const games = ["yw1",'yw2',"yw3"];
+
+    if (games.includes(game)) {
+        switch_game(game);
+    } else {
+        switch_game("yw1");
+    } 
+}
+
+loadPage();

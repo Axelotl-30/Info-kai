@@ -14,9 +14,17 @@ body, html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: "yw1 yw1 jiba1 jiba1"
+                         "yw1 yw1 yw2 yw2"
+                         "jiba2 jiba2 yw2 yw2"
+                         "ywb1 ywb1 jiba3 jiba3"
+                         "ywb1 ywb1 yw3 yw3"
+                         "jiba4 jiba4 yw3 yw3";
+    box-sizing: border-box;
+    height: 200vh !important;
     background-image: url('assets\\orbs.png'), url('assets\\background.png');
     background-size: 15vw 15vw, cover; 
     background-repeat: repeat, no-repeat; 
@@ -76,3 +84,64 @@ body {
 #qrcode {
     background-image: url('assets\\icons\\qrcodes.png');
 }
+
+#fusion {
+    background-image: url('assets\\icons\\fusions.png');
+}
+
+#hiding {
+    background-image: url('assets\\icons\\planques.png');
+}
+
+#extra {
+    background-image: url('assets\\icons\\extra.png');
+}
+
+#blaster {
+    background-image: url('assets\\icons\\blasterT.png');
+}
+
+#zombie {
+    background-image: url('assets\\icons\\zombie.png');
+}
+
+.icon-grid{
+    background-color: azure;
+    background-clip: content-box;
+    border-radius: 20px;
+    padding: 2vw;
+}
+#yw1 {
+    grid-area: yw1;
+}
+#yw2 {
+    grid-area: yw2;
+}
+#ywb1 {
+    grid-area: ywb1;
+}
+#yw3 {
+    grid-area: yw3;
+}
+
+.jiba {
+    background-image: url('assets\\jibanyan.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+}
+
+#jiba1 {
+    grid-area: jiba1;
+}
+#jiba2 {
+    grid-area: jiba2;
+}
+#jiba3 {
+    grid-area: jiba3;
+}
+#jiba4 {
+    grid-area: jiba4;
+}
+
